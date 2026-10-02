@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locksmith Ad Killer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Sidebar ──────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="logo-icon">🔒</span>
+      <div class="logo-text">
+        <span class="logo-title">Ad Killer</span>
+        <span class="logo-sub">Cheltenham UK</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-btn active" id="nav-dashboard" onclick="showTab('dashboard')">
+        <span class="nav-icon">📊</span> Dashboard
+      </button>
+      <button class="nav-btn" id="nav-settings" onclick="showTab('settings')">
+        <span class="nav-icon">⚙️</span> Settings
+      </button>
+      <button class="nav-btn" id="nav-logs" onclick="showTab('logs')">
+        <span class="nav-icon">📋</span> Logs
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-pill" id="status-pill">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="status-label">Stopped</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Main Content ──────────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- ════════════════════════════════════════════════════════════════
+         TAB 1: DASHBOARD
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="tab active" id="tab-dashboard">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Monitor your ad campaign in real time</p>
+        </div>
+        <div class="header-controls">
+          <div class="proxy-badge" id="proxy-badge">
+            <span>🌐</span>
+            <span id="current-ip">No proxy yet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="stats-grid">
+        <div class="stat-card" id="card-clicks">
+          <div class="stat-icon">🖱️</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-total-clicks">0</div>
+            <div class="stat-label">Total Ad Clicks</div>
+          </div>
+          <div class="stat-glow clicks-glow"></div>
+        </div>
+
+        <div class="stat-card" id="card-cycles">
+          <div class="stat-icon">🔄</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-cycles">0</div>
+            <div class="stat-label">Cycles Complete</div>
+          </div>
+          <div class="stat-glow cycles-glow"></div>
+        </div>
+
+        <div class="stat-card" id="card-ads-found">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-ads-found">0</div>
+            <div class="stat-label">Ads Detected</div>
+          </div>
+          <div class="stat-glow found-glow"></div>
+        </div>
+
+        <div class="stat-card" id="card-next">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-next-cycle">—</div>
+            <div class="stat-label">Next Cycle</div>
+          </div>
+          <div class="stat-glow next-glow"></div>
+        </div>
+      </div>
+
+      <!-- Current Keyword -->
+      <div class="keyword-banner" id="keyword-banner">
+        <span class="keyword-label">Searching for:</span>
+        <span class="keyword-text" id="current-keyword">—</span>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button class="btn-start" id="btn-start" onclick="startBot()">
+          <span class="btn-icon">▶</span>
+          <span class="btn-text">START BOT</span>
+        </button>
+        <button class="btn-stop" id="btn-stop" onclick="stopBot()" disabled>
+          <span class="btn-icon">■</span>
+          <span class="btn-text">STOP BOT</span>
+        </button>
+        <label class="toggle-wrap">
+          <input type="checkbox" id="chk-no-proxy" />
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          <span class="toggle-label">Test mode (no proxy)</span>
+        </label>
+      </div>
+
+      <!-- Activity Feed -->
+      <div class="activity-section">
+        <div class="section-header">
+          <h2 class="section-title">Live Activity</h2>
+          <span class="section-badge" id="activity-count">0 cycles</span>
+        </div>
+        <div class="activity-feed" id="activity-feed">
+          <div class="activity-empty">
+            <span class="empty-icon">🕐</span>
+            <p>Waiting for bot to start...</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         TAB 2: SETTINGS
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="tab" id="tab-settings">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Settings</h1>
+          <p class="page-subtitle">Configure your proxy, keywords and timing</p>
+        </div>
+      </div>
+
+      <div class="settings-grid">
+
+        <!-- Proxy Card -->
+        <div class="settings-card">
+          <div class="settings-card-header">
+            <span class="settings-card-icon">🌐</span>
+            <h3>Proxy Settings (Oxylabs)</h3>
+            <label class="toggle-wrap proxy-toggle" style="margin-left:auto;">
+              <input type="checkbox" id="chk-use-proxy" checked onchange="toggleProxyFields()" />
+              <span class="toggle-track"><span class="toggle-thumb"></span></span>
+              <span class="toggle-label" id="proxy-toggle-label">Proxy ON</span>
+            </label>
+          </div>
+
+          <div id="proxy-fields">
+            <div class="form-group">
+              <label class="form-label">Host</label>
+              <input class="form-input" id="s-proxy-host" placeholder="pr.oxylabs.io" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Port</label>
+                <input class="form-input" id="s-proxy-port" type="number" placeholder="7777" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Country Code</label>
+                <input class="form-input" id="s-proxy-country" placeholder="GB" maxlength="2" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Username</label>
+              <input class="form-input" id="s-proxy-username" placeholder="Your Oxylabs username" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Password</label>
+              <input class="form-input" id="s-proxy-password" type="password" placeholder="Your Oxylabs password" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Target City</label>
+              <input class="form-input" id="s-proxy-city" placeholder="cheltenham" />
+            </div>
+
+            <button class="btn-test-proxy" id="btn-test-proxy" onclick="testProxy()">
+              <span>🔍 Test Proxy Connection</span>
+            </button>
+          </div>
+
+          <!-- No-proxy test (shown when proxy is OFF) -->
+          <div id="no-proxy-section" style="display:none;">
+            <div class="no-proxy-banner">
+              <span>⚡</span>
+              <span>Proxy is <strong>disabled</strong> — bot will use your real IP</span>
+            </div>
+            <button class="btn-test-proxy" id="btn-test-direct" onclick="testDirect()">
+              <span>🔗 Test Direct Internet Connection</span>
+            </button>
+          </div>
+
+          <div class="proxy-result" id="proxy-result" style="display:none;"></div>
+        </div>
+
+        <!-- Keywords Card -->
+        <div class="settings-card">
+          <div class="settings-card-header">
+            <span class="settings-card-icon">🔍</span>
+            <h3>Search Keywords</h3>
+          </div>
+          <p class="settings-hint">The bot randomly picks one keyword per cycle.</p>
+          <div class="keyword-list" id="keyword-list"></div>
+          <div class="keyword-add-row">
+            <input class="form-input" id="new-keyword-input" placeholder="Add new keyword..." />
+            <button class="btn-add-keyword" onclick="addKeyword()">+ Add</button>
+          </div>
+        </div>
+
+        <!-- Timing Card -->
+        <div class="settings-card timing-card">
+          <div class="settings-card-header">
+            <span class="settings-card-icon">⏱️</span>
+            <h3>Timing</h3>
+          </div>
+          <div class="form-group">
+            <label class="form-label">
+              Cycle Interval:
+              <strong id="interval-display">20</strong> minutes
+            </label>
+            <input
+              class="form-range"
+              id="s-interval"
+              type="range"
+              min="5"
+              max="60"
+              step="5"
+              value="20"
+              oninput="document.getElementById('interval-display').textContent = this.value"
+            />
+            <div class="range-labels">
+              <span>5 min</span><span>60 min</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="settings-actions">
+        <button class="btn-save" onclick="saveSettings()">💾 Save Settings</button>
+        <div class="save-msg" id="save-msg" style="display:none;"></div>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         TAB 3: LOGS
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="tab" id="tab-logs">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Logs</h1>
+          <p class="page-subtitle">Full real-time activity log</p>
+        </div>
+        <div class="log-actions">
+          <button class="btn-clear-log" onclick="clearLogs()">🗑️ Clear</button>
+        </div>
+      </div>
+
+      <div class="log-container" id="log-container">
+        <div class="log-empty">No logs yet. Start the bot to see activity here.</div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

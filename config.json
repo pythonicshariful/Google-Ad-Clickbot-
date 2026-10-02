@@ -1,0 +1,43 @@
+{
+  "proxy": {
+    "host": "pr.oxylabs.io",
+    "port": 7777,
+    "username": "YOUR_OXYLABS_USERNAME",
+    "password": "YOUR_OXYLABS_PASSWORD",
+    "country": "GB",
+    "city": "cheltenham"
+  },
+  "search": {
+    "engine": "https://www.google.co.uk",
+    "keywords": [
+      "Locksmiths Cheltenham",
+      "Locksmith near Cheltenham",
+      "Emergency locksmith Cheltenham",
+      "24 hour locksmith Cheltenham",
+      "Local locksmith Cheltenham",
+      "Locksmith Cheltenham GL50",
+      "Locksmith Cheltenham GL51",
+      "Locksmith Cheltenham GL52",
+      "Cheap locksmith Cheltenham"
+    ],
+    "cycle_interval_minutes": 20
+  },
+  "browser": {
+    "headless": false,
+    "window_width": 1366,
+    "window_height": 768,
+    "language": "en-GB"
+  },
+  "behavior": {
+    "min_delay_between_clicks_seconds": 2,
+    "max_delay_between_clicks_seconds": 6,
+    "min_delay_after_search_seconds": 3,
+    "max_delay_after_search_seconds": 7,
+    "wait_on_ad_page_seconds_min": 5,
+    "wait_on_ad_page_seconds_max": 15
+  },
+  "logging": {
+    "log_file": "clickbot.log",
+    "log_level": "INFO"
+  }
+}
