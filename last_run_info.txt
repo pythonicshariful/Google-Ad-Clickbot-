@@ -1,0 +1,25 @@
+Google Ad Clickbot — Last Run Info
+==================================
+Written : 2026-10-03 16:16:17
+Cycles  : 1
+Clicks  : 2
+Mode    : No-proxy test mode
+
+File paths (copy into Explorer / VSCode):
+  Log file      -> G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+  Session sum.  -> G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+  Last run info -> G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+
+Latest config keywords:
+    • car insurance quote
+    • Locksmith near Cheltenham
+    • Emergency locksmith Cheltenham
+    • 24 hour locksmith Cheltenham
+    • Local locksmith Cheltenham
+    • Locksmith Cheltenham GL50
+    • Locksmith Cheltenham GL51
+    • Locksmith Cheltenham GL52
+    • Cheap locksmith Cheltenham
+
+Status: Running. Next cycle in 5 minutes.
+Latest cycle (#1) clicks: 2

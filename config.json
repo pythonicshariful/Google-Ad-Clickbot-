@@ -5,12 +5,13 @@
     "username": "YOUR_OXYLABS_USERNAME",
     "password": "YOUR_OXYLABS_PASSWORD",
     "country": "GB",
-    "city": "cheltenham"
+    "city": "cheltenham",
+    "enabled": false
   },
   "search": {
     "engine": "https://www.google.co.uk",
     "keywords": [
-      "Locksmiths Cheltenham",
+      "car insurance quote",
       "Locksmith near Cheltenham",
       "Emergency locksmith Cheltenham",
       "24 hour locksmith Cheltenham",
@@ -20,7 +21,8 @@
       "Locksmith Cheltenham GL52",
       "Cheap locksmith Cheltenham"
     ],
-    "cycle_interval_minutes": 20
+    "cycle_interval_minutes": 5,
+    "max_keyword_attempts_per_cycle": 4
   },
   "browser": {
     "headless": false,

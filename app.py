@@ -30,6 +30,10 @@ try:
         detect_ads,
         click_ad,
         build_proxy_string,
+        run_cycle,
+        write_last_run_info,
+        append_session_summary,
+        close_driver_safely,
     )
 except Exception as _ie:
     IMPORT_ERROR = str(_ie)
@@ -40,6 +44,10 @@ except Exception as _ie:
     def search_google(*a, **kw): return False
     def detect_ads(*a, **kw):   return []
     def click_ad(*a, **kw):     return False
+    def run_cycle(config, logger, n, use_proxy=True): raise RuntimeError(IMPORT_ERROR)
+    def write_last_run_info(*a, **kw): return os.path.join(BASE_DIR, "last_run_info.txt")
+    def append_session_summary(config, lines): return os.path.join(BASE_DIR, "session_summary.txt")
+    def close_driver_safely(d, logger=None): pass
 
 # ── Globals ────────────────────────────────────────────────────────────────────
 CONFIG_PATH   = os.path.join(BASE_DIR, "config.json")
@@ -94,93 +102,154 @@ def bot_worker(use_proxy=True):
 
     config   = load_config(CONFIG_PATH)
     interval = config["search"].get("cycle_interval_minutes", 20) * 60
-    keywords = config["search"]["keywords"]
-    behavior = config["behavior"]
+    keywords = config["search"].get("keywords", []) or []
 
     stats["status"] = "running"
     logger.info("Bot started.")
 
-    while not stop_event.is_set():
-        stats["cycles_done"] += 1
-        cycle_num = stats["cycles_done"]
-        keyword   = random.choice(keywords)
-        stats["current_keyword"] = keyword
+    cycle_number = 0
+    total_clicks = 0
 
-        logger.info(f"=== CYCLE #{cycle_num} | Keyword: '{keyword}' ===")
+    # Init the persistent copyable files (same as clickbot CLI main())
+    try:
+        append_session_summary(config, [])   # writes header on first run
+        write_last_run_info(
+            config, 0, 0,
+            extra="Bot started (UI mode) — waiting for first cycle.",
+        )
+    except Exception:
+        pass
 
-        driver     = None
-        ads_clicked = 0
-        ads_found   = 0
+    # Also show banner paths in the log so users can copy from Logs tab text
+    try:
+        _cfg = load_config(CONFIG_PATH)
+        log_p = (_cfg.get("logging") or {}).get("log_file", "clickbot.log")
+    except Exception:
+        log_p = "clickbot.log"
+    log_file_p = os.path.join(BASE_DIR, log_p) if not os.path.isabs(log_p) else log_p
+    sum_file_p = os.path.join(BASE_DIR, "session_summary.txt")
+    lr_file_p  = os.path.join(BASE_DIR, "last_run_info.txt")
+    logger.info(f"Copyable paths  ->  Log: {log_file_p}")
+    logger.info(f"Copyable paths  ->  Summary: {sum_file_p}")
+    logger.info(f"Copyable paths  ->  Last run: {lr_file_p}")
 
-        try:
-            driver = create_driver(config, logger, use_proxy=use_proxy)
+    # Get proxy IP once at startup (for display only)
+    try:
+        import requests
+        proxy_str = build_proxy_string(config["proxy"]) if use_proxy else None
+        proxies   = {"http": f"http://{proxy_str}", "https": f"http://{proxy_str}"} if proxy_str else {}
+        ip_data   = requests.get("https://api.ipify.org?format=json", proxies=proxies, timeout=10).json()
+        stats["current_ip"] = ip_data.get("ip", "—")
+    except Exception:
+        stats["current_ip"] = "—"
 
-            # Get proxy IP for display
+    try:
+        while not stop_event.is_set():
+            cycle_number += 1
+            config = load_config(CONFIG_PATH)
+            interval = config["search"].get("cycle_interval_minutes", 20) * 60
+            keywords = config["search"].get("keywords", []) or []
+            stats["cycles_done"] = cycle_number
+
+            # Show a "current keyword" hint = first keyword of current cycle set
+            shuffled_preview = list(keywords)
+            random.shuffle(shuffled_preview)
+            first_kw = shuffled_preview[0] if shuffled_preview else ""
+            stats["current_keyword"] = first_kw
+
+            max_attempts = min(
+                int(config["search"].get("max_keyword_attempts_per_cycle", len(keywords))),
+                len(keywords),
+            )
+            logger.info(
+                f"=== CYCLE #{cycle_number} START | "
+                f"attempts up to {max_attempts}, browser stays open all cycle ==="
+            )
+
+            # ── Delegate the actual cycle to clickbot.run_cycle() ────────
+            #    This function itself:
+            #      - opens ONE browser ONCE at cycle start
+            #      - tries up to N different keywords in the same driver
+            #      - only closes the browser in a cycle-level finally
+            #      - appends session_summary.txt
+            clicks = 0
             try:
-                import requests
-                proxy_str = build_proxy_string(config["proxy"]) if use_proxy else None
-                proxies   = {"http": f"http://{proxy_str}", "https": f"http://{proxy_str}"} if proxy_str else {}
-                ip_data   = requests.get("https://api.ipify.org?format=json", proxies=proxies, timeout=10).json()
-                stats["current_ip"] = ip_data.get("ip", "—")
+                clicks = run_cycle(config, logger, cycle_number, use_proxy=use_proxy)
+            except KeyboardInterrupt:
+                raise
+            except Exception as cycle_err:
+                logger.error(f"CYCLE #{cycle_number} crashed (continuing after interval): {cycle_err}")
+                stats["status"] = "error"
+                clicks = 0
+
+            total_clicks += clicks
+            stats["total_clicks"] = total_clicks
+            stats["ads_found"]   = max(stats["ads_found"], clicks)   # reasonable approximation
+
+            # Persist last_run_info after EVERY cycle — guarantees user can
+            # always copy current totals & paths even from Logs tab.
+            try:
+                write_last_run_info(
+                    config, cycle_number, total_clicks,
+                    extra=(
+                        f"Status: Running. Next cycle in {interval // 60} minutes.\n"
+                        f"Latest cycle (#{cycle_number}) clicks: {clicks}"
+                    ),
+                )
             except Exception:
-                stats["current_ip"] = "—"
+                pass
 
-            if search_google(driver, keyword, logger):
-                ad_links = detect_ads(driver, logger)
-                ads_found = len(ad_links)
-                stats["ads_found"] += ads_found
+            # Add a short entry to activity_log (UI History panel)
+            entry = {
+                "time":    datetime.now().strftime("%H:%M"),
+                "keyword": f"{first_kw}" + (f" +{max_attempts-1} more" if max_attempts > 1 else ""),
+                "found":   clicks,      # best effort — exact per-attempt not needed for history
+                "clicked": clicks,
+                "cycle":   cycle_number,
+            }
+            activity_log.insert(0, entry)
+            activity_log = activity_log[:50]
 
-                delay_min = behavior.get("min_delay_between_clicks_seconds", 2)
-                delay_max = behavior.get("max_delay_between_clicks_seconds", 6)
+            logger.info(
+                f"=== CYCLE #{cycle_number} END | "
+                f"Clicked: {clicks} | Running total: {total_clicks} ==="
+            )
 
-                for i, (link_elem, href) in enumerate(ad_links):
-                    if stop_event.is_set():
-                        break
-                    success = click_ad(driver, link_elem, href, config, logger)
-                    if success:
-                        ads_clicked += 1
-                        stats["total_clicks"] += 1
-                    if i < len(ad_links) - 1:
-                        time.sleep(random.uniform(delay_min, delay_max))
-
-        except Exception as e:
-            logger.error(f"Cycle error: {e}")
-            stats["status"] = "error"
-        finally:
-            if driver:
-                try:
-                    driver.quit()
-                except Exception:
-                    pass
-
-        # Log activity entry
-        entry = {
-            "time":    datetime.now().strftime("%H:%M"),
-            "keyword": keyword,
-            "found":   ads_found,
-            "clicked": ads_clicked,
-            "cycle":   cycle_num,
-        }
-        activity_log.insert(0, entry)
-        activity_log = activity_log[:50]  # keep last 50
-
-        logger.info(f"=== CYCLE #{cycle_num} END | Clicked: {ads_clicked}/{ads_found} ===")
-
-        if stop_event.is_set():
-            break
-
-        # Countdown
-        stats["status"] = "running"
-        for remaining in range(interval, 0, -1):
             if stop_event.is_set():
                 break
-            stats["next_cycle_secs"] = remaining
-            time.sleep(1)
 
-    stats["status"]  = "stopped"
-    stats["next_cycle_secs"] = 0
-    bot_running = False
-    logger.info("Bot stopped.")
+            # Countdown between cycles
+            stats["status"] = "running"
+            for remaining in range(interval, 0, -1):
+                if stop_event.is_set():
+                    break
+                stats["next_cycle_secs"] = remaining
+                time.sleep(1)
+
+    except KeyboardInterrupt:
+        pass
+    finally:
+        # Always write final STOPPED summary + last_run_info (exactly like CLI)
+        try:
+            stop_line = (
+                f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] "
+                f"STOPPED | Total cycles: {cycle_number} | Total clicks: {total_clicks}"
+            )
+            append_session_summary(config, [stop_line, ""])
+        except Exception:
+            pass
+        try:
+            write_last_run_info(
+                config, cycle_number, total_clicks,
+                extra=f"Status: STOPPED at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            )
+        except Exception:
+            pass
+
+        stats["status"]  = "stopped"
+        stats["next_cycle_secs"] = 0
+        bot_running = False
+        logger.info(f"Bot stopped. Total cycles: {cycle_number} | Total clicks: {total_clicks}")
 
 
 # ── Python API (exposed to JavaScript) ───────────────────────────────────────
@@ -234,6 +303,78 @@ class BotAPI:
             except queue.Empty:
                 break
         return messages
+
+    # ── Log paths + content (for copyable UI buttons) ──────────────────────
+
+    def _log_path(self):
+        cfg = load_config(CONFIG_PATH)
+        log_file = cfg.get("logging", {}).get("log_file", "clickbot.log")
+        if not os.path.isabs(log_file):
+            log_file = os.path.join(BASE_DIR, log_file)
+        return log_file
+
+    def _summary_path(self):
+        return os.path.join(BASE_DIR, "session_summary.txt")
+
+    def _lastrun_path(self):
+        return os.path.join(BASE_DIR, "last_run_info.txt")
+
+    def _read_file(self, path, max_lines=None):
+        try:
+            if not os.path.exists(path):
+                return ""
+            with open(path, "r", encoding="utf-8", errors="replace") as f:
+                if max_lines is None:
+                    return f.read()
+                lines = f.readlines()
+                if len(lines) <= max_lines:
+                    return "".join(lines)
+                return "".join(lines[-max_lines:])
+        except Exception as e:
+            return f"<error reading file: {e}>"
+
+    def get_log_paths(self):
+        """Return absolute paths to all 3 log/summary files for the UI to display."""
+        try:
+            return {
+                "ok": True,
+                "log_file":     self._log_path(),
+                "summary_file": self._summary_path(),
+                "lastrun_file": self._lastrun_path(),
+            }
+        except Exception as e:
+            return {"ok": False, "msg": str(e)}
+
+    def get_log_tail(self, n=200):
+        """Return the last N lines of the main clickbot.log file."""
+        try:
+            n = int(n) if n else 200
+            return {
+                "ok": True,
+                "content": self._read_file(self._log_path(), max_lines=n),
+            }
+        except Exception as e:
+            return {"ok": False, "msg": str(e), "content": ""}
+
+    def get_summary_contents(self):
+        """Return the full contents of session_summary.txt."""
+        try:
+            return {
+                "ok": True,
+                "content": self._read_file(self._summary_path()),
+            }
+        except Exception as e:
+            return {"ok": False, "msg": str(e), "content": ""}
+
+    def get_lastrun_contents(self):
+        """Return the full contents of last_run_info.txt."""
+        try:
+            return {
+                "ok": True,
+                "content": self._read_file(self._lastrun_path()),
+            }
+        except Exception as e:
+            return {"ok": False, "msg": str(e), "content": ""}
 
     # ── Config / Settings ─────────────────────────────────────────────────────
 

@@ -721,3 +721,99 @@ body { display: flex; height: 100vh; }
 .log-line.WARNING { color: var(--accent-yellow); }
 .log-line.ERROR   { color: var(--accent-red); }
 .log-line.DEBUG   { color: var(--text-muted); }
+
+/* ── Copyable log paths card ────────────────────────────────────────── */
+.log-paths-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.log-path-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.log-path-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.log-path-icon { font-size: 15px; }
+.log-path-value-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.log-path-value-wrap.single {
+  justify-content: flex-start;
+}
+.log-path-input {
+  flex: 1 1 320px;
+  min-width: 260px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12.5px;
+  padding: 9px 12px;
+  outline: none;
+  cursor: text;
+  user-select: all;
+  transition: border-color var(--transition), background var(--transition);
+}
+.log-path-input:focus {
+  border-color: var(--border-glow);
+  background: rgba(0, 212, 255, 0.05);
+}
+.btn-copy {
+  background: var(--accent-dim);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.btn-copy:hover {
+  background: var(--accent);
+  color: #001a22;
+  transform: translateY(-1px);
+}
+.btn-copy:active { transform: translateY(0); }
+.btn-copy.copied {
+  background: var(--accent-green);
+  color: #00220d;
+  border-color: var(--accent-green);
+}
+.btn-copy-secondary {
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.3);
+  color: var(--accent-purple);
+}
+.btn-copy-secondary:hover {
+  background: var(--accent-purple);
+  color: #1a0f33;
+  border-color: var(--accent-purple);
+}
+.btn-copy-wide { padding: 10px 20px; width: 100%; max-width: 420px; }
+
+/* log-container height shrinks a bit because we added the paths card above it */
+#tab-logs .log-container {
+  height: calc(100vh - 420px);
+  min-height: 220px;
+}

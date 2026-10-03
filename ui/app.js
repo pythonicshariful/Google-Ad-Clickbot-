@@ -40,6 +40,8 @@ if (typeof pywebview === 'undefined') {
 function startPolling() {
   pollInterval = setInterval(refreshStatus, 1000);
   refreshStatus();
+  // Also refresh copyable log paths once after first poll
+  setTimeout(loadLogPaths, 250);
 }
 
 async function refreshStatus() {
@@ -47,6 +49,96 @@ async function refreshStatus() {
     const data = await pywebview.api.get_status();
     renderStatus(data);
   } catch (e) { /* silent */ }
+  // Keep log paths fresh (light call, just reads file paths from config)
+  try { await loadLogPaths(); } catch (e) { /* silent */ }
+}
+
+// ── Log paths + copy helpers (Logs tab) ────────────────────────────────
+async function loadLogPaths() {
+  try {
+    const res = await pywebview.api.get_log_paths();
+    if (!res || !res.ok) return;
+    const setPath = (id, value) => {
+      const el = document.getElementById(id);
+      if (el && el.value !== value) el.value = value;
+    };
+    setPath('log-file-path',    res.log_file     || '');
+    setPath('log-summary-path', res.summary_file || '');
+    setPath('log-lastrun-path', res.lastrun_file || '');
+  } catch (e) { /* silent — pywebview bridge may not be ready yet */ }
+}
+
+async function copyText(text, btnEl) {
+  if (!text) return;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      // fallback for older / restricted webviews
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    flashCopied(btnEl);
+  } catch (e) {
+    if (btnEl) {
+      const orig = btnEl.textContent;
+      btnEl.textContent = '❌ Copy failed';
+      setTimeout(() => { btnEl.textContent = orig; }, 1500);
+    }
+  }
+}
+
+function flashCopied(btnEl) {
+  if (!btnEl) return;
+  const original = btnEl.textContent;
+  btnEl.classList.add('copied');
+  btnEl.textContent = '✅ Copied!';
+  setTimeout(() => {
+    btnEl.classList.remove('copied');
+    btnEl.textContent = original;
+  }, 1500);
+}
+
+async function copyLiveLogTail(btnEl) {
+  try {
+    // Use API tail method, fallback to DOM contents if API unavailable
+    let tail = '';
+    try {
+      const res = await pywebview.api.get_log_tail(200);
+      if (res && res.ok && res.content) tail = res.content;
+    } catch (e) { /* ignore and use DOM fallback */ }
+    if (!tail) {
+      const lines = document.querySelectorAll('#log-container .log-line');
+      tail = Array.from(lines).map(l => l.textContent).join('\n');
+    }
+    await copyText(tail, btnEl);
+  } catch (e) {
+    alert('Could not copy log tail: ' + e);
+  }
+}
+
+async function copySummaryContents(btnEl) {
+  try {
+    const res = await pywebview.api.get_summary_contents();
+    await copyText((res && res.content) || '(summary file is empty)', btnEl);
+  } catch (e) {
+    alert('Could not read summary: ' + e);
+  }
+}
+
+async function copyLastRunContents(btnEl) {
+  try {
+    const res = await pywebview.api.get_lastrun_contents();
+    await copyText((res && res.content) || '(last-run file is empty)', btnEl);
+  } catch (e) {
+    alert('Could not read last-run info: ' + e);
+  }
 }
 
 function renderStatus(data) {
@@ -260,6 +352,12 @@ function setVal(id, val) {
   if (el) el.value = val;
 }
 
+function syncCurrentKeywords() {
+  if (!currentConfig) return;
+  currentConfig.search = currentConfig.search || {};
+  currentConfig.search.keywords = [...keywords];
+}
+
 function renderKeywords() {
   const list = document.getElementById('keyword-list');
   list.innerHTML = keywords.map((kw, i) => `
@@ -278,6 +376,8 @@ function addKeyword() {
   keywords.push(kw);
   input.value = '';
   renderKeywords();
+  syncCurrentKeywords();
+  if (currentConfig) saveSettings();
 }
 
 // Allow Enter key in keyword input
@@ -289,6 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function removeKeyword(i) {
   keywords.splice(i, 1);
   renderKeywords();
+  syncCurrentKeywords();
+  if (currentConfig) saveSettings();
 }
 
 async function saveSettings() {

@@ -278,6 +278,61 @@
         </div>
       </div>
 
+      <!-- Copyable log paths + direct-copy content buttons -->
+      <div class="log-paths-card">
+
+        <div class="log-path-row">
+          <div class="log-path-label">
+            <span class="log-path-icon">📄</span>
+            <span>Full log file (click path to select &amp; copy):</span>
+          </div>
+          <div class="log-path-value-wrap">
+            <input type="text" class="log-path-input" id="log-file-path" readonly
+              title="Click the path to select all, then press Copy"
+              value="(shown after first poll)" />
+            <button class="btn-copy" onclick="copyText(document.getElementById('log-file-path').value, this)">📋 Copy Path</button>
+          </div>
+        </div>
+
+        <div class="log-path-row">
+          <div class="log-path-label">
+            <span class="log-path-icon">📋</span>
+            <span>Session summary (one line per cycle):</span>
+          </div>
+          <div class="log-path-value-wrap">
+            <input type="text" class="log-path-input" id="log-summary-path" readonly
+              title="Click the path to select all, then press Copy"
+              value="(shown after first poll)" />
+            <button class="btn-copy" onclick="copyText(document.getElementById('log-summary-path').value, this)">📋 Copy Path</button>
+            <button class="btn-copy btn-copy-secondary" onclick="copySummaryContents(this)">✉️ Copy Contents</button>
+          </div>
+        </div>
+
+        <div class="log-path-row">
+          <div class="log-path-label">
+            <span class="log-path-icon">📤</span>
+            <span>Last-run info (persists after exit — copy paths easily):</span>
+          </div>
+          <div class="log-path-value-wrap">
+            <input type="text" class="log-path-input" id="log-lastrun-path" readonly
+              value="(shown after first poll)" />
+            <button class="btn-copy" onclick="copyText(document.getElementById('log-lastrun-path').value, this)">📋 Copy Path</button>
+            <button class="btn-copy btn-copy-secondary" onclick="copyLastRunContents(this)">✉️ Copy Contents</button>
+          </div>
+        </div>
+
+        <div class="log-path-row">
+          <div class="log-path-label">
+            <span class="log-path-icon">💬</span>
+            <span>Live log tail (last ~200 lines):</span>
+          </div>
+          <div class="log-path-value-wrap single">
+            <button class="btn-copy btn-copy-wide" onclick="copyLiveLogTail(this)">📋 Copy Current Log Tail to Clipboard</button>
+          </div>
+        </div>
+
+      </div>
+
       <div class="log-container" id="log-container">
         <div class="log-empty">No logs yet. Start the bot to see activity here.</div>
       </div>

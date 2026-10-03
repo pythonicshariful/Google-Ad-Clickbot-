@@ -1,8 +1,520 @@
-2026-10-02 19:41:35,958 [INFO] Bot started.
-2026-10-02 19:41:35,958 [INFO] === CYCLE #1 | Keyword: 'Emergency locksmith Cheltenham' ===
-2026-10-02 19:41:35,958 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
-2026-10-02 19:41:48,126 [INFO] Browser launched | UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_4_0 like Mac OS X) App...
-2026-10-02 19:41:48,394 [INFO] Searching: 'Emergency locksmith Cheltenham'
-2026-10-02 19:42:05,650 [INFO] Search submitted.
-2026-10-02 19:42:09,192 [WARNING] No sponsored ad links detected on this results page.
-2026-10-02 19:42:11,308 [INFO] === CYCLE #1 END | Clicked: 0/0 ===
+2026-10-03 12:56:43,668 [INFO] Bot started.
+2026-10-03 12:56:43,669 [INFO] === CYCLE #1 | Keyword: 'Emergency locksmith Cheltenham' ===
+2026-10-03 12:56:43,669 [ERROR] Cycle error: No module named 'fake_useragent'
+2026-10-03 12:56:43,669 [INFO] === CYCLE #1 END | Clicked: 0/0 ===
+2026-10-03 12:57:19,680 [INFO] Bot stopped.
+2026-10-03 12:59:02,774 [INFO] Bot started.
+2026-10-03 12:59:02,775 [INFO] === CYCLE #1 | Keyword: 'Locksmiths Cheltenham' ===
+2026-10-03 12:59:02,777 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 12:59:10,071 [INFO] Browser launched | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+2026-10-03 12:59:10,349 [INFO] Searching: 'Locksmiths Cheltenham'
+2026-10-03 12:59:27,469 [INFO] Search submitted.
+2026-10-03 12:59:30,760 [WARNING] No sponsored ad links detected on this results page.
+2026-10-03 12:59:33,635 [INFO] === CYCLE #1 END | Clicked: 0/0 ===
+2026-10-03 13:33:44,569 [INFO] Bot started.
+2026-10-03 13:33:44,571 [INFO] === CYCLE #1 | Keyword: 'Emergency locksmith Cheltenham' ===
+2026-10-03 13:33:44,571 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 13:33:52,327 [INFO] Browser launched | UA: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 ...
+2026-10-03 13:33:54,085 [INFO] Searching: 'Emergency locksmith Cheltenham'
+2026-10-03 13:34:16,875 [INFO] Search submitted.
+2026-10-03 13:34:19,480 [WARNING] No sponsored ad links detected on this results page.
+2026-10-03 13:34:21,947 [INFO] === CYCLE #1 END | Clicked: 0/0 ===
+2026-10-03 13:40:34,778 [INFO] Bot started.
+2026-10-03 13:40:34,779 [INFO] === CYCLE #1 | Keyword: 'Locksmith Cheltenham GL51' ===
+2026-10-03 13:40:34,779 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 13:40:42,381 [INFO] Browser launched | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/...
+2026-10-03 13:40:44,888 [INFO] Searching: 'Locksmith Cheltenham GL51'
+2026-10-03 13:41:07,145 [INFO] Search submitted.
+2026-10-03 13:41:12,174 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 13:41:12,183 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 13:41:12,193 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 13:41:12,211 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 13:41:12,260 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 13:41:12,269 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 13:41:12,279 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 13:41:12,289 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 13:41:12,298 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 13:41:12,309 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 13:41:12,318 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 13:41:12,332 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 13:41:12,332 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 13:41:12,350 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 13:41:12,366 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 13:41:12,366 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 13:41:12,409 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 65, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 13:41:12,581 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_134112.html
+2026-10-03 13:41:15,202 [INFO] === CYCLE #1 END | Clicked: 0/0 ===
+2026-10-03 13:47:23,859 [INFO] Bot started.
+2026-10-03 13:47:23,860 [INFO] === CYCLE #1 | Keyword: 'Locksmith Cheltenham GL52' ===
+2026-10-03 13:47:23,860 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 13:47:30,627 [INFO] Browser launched | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+2026-10-03 13:47:31,760 [INFO] Searching: 'Locksmith Cheltenham GL52'
+2026-10-03 13:47:54,520 [INFO] Search submitted.
+2026-10-03 13:48:00,104 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 13:48:00,116 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 13:48:00,129 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 13:48:00,140 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 13:48:00,152 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 13:48:00,165 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 13:48:00,177 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 13:48:00,186 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 13:48:00,196 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 13:48:00,206 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 13:48:00,220 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 13:48:00,231 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 13:48:00,232 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 13:48:00,248 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 13:48:00,262 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 13:48:00,262 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 13:48:00,297 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 73, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 13:48:00,480 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_134800.html
+2026-10-03 13:48:03,044 [INFO] === CYCLE #1 END | Clicked: 0/0 ===
+2026-10-03 14:30:06,051 [INFO] Bot started.
+2026-10-03 14:30:06,055 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 14:30:06,055 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 14:30:06,055 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 14:30:07,214 [INFO] === CYCLE #1 START | attempts up to 4, browser stays open all cycle ===
+2026-10-03 14:30:07,216 [INFO] === CYCLE #1 START | 9 keywords available, max attempts=4 ===
+2026-10-03 14:30:07,216 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 14:30:17,131 [INFO] Browser launched | UA: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML...
+2026-10-03 14:30:17,144 [INFO] --- CYCLE #1 Attempt 1/4 | Keyword: 'Cheap locksmith Cheltenham' ---
+2026-10-03 14:30:17,165 [INFO] Searching: 'Cheap locksmith Cheltenham'
+2026-10-03 14:30:34,271 [INFO] Search submitted.
+2026-10-03 14:30:48,486 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 14:30:48,495 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 14:30:48,504 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 14:30:48,512 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 14:30:48,521 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 14:30:48,530 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 14:30:48,541 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 14:30:48,552 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 14:30:48,560 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 14:30:48,570 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 14:30:48,578 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 14:30:48,587 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 14:30:48,587 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 14:30:48,606 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 14:30:48,619 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 14:30:48,619 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 14:30:48,655 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 111, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 14:30:48,999 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_143048.html
+2026-10-03 14:30:49,000 [INFO] Attempt 1: no ads for 'Cheap locksmith Cheltenham' — trying next keyword (if available).
+2026-10-03 14:30:49,165 [INFO] --- CYCLE #1 Attempt 2/4 | Keyword: 'Locksmith Cheltenham GL50' ---
+2026-10-03 14:30:49,178 [INFO] Searching: 'Locksmith Cheltenham GL50'
+2026-10-03 14:31:08,466 [INFO] Search submitted.
+2026-10-03 14:31:12,716 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 14:31:12,727 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 14:31:12,736 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 14:31:12,744 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:12,752 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:12,760 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 14:31:12,769 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 14:31:12,777 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 14:31:12,784 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 14:31:12,790 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 14:31:12,799 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 14:31:12,806 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:12,806 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 14:31:12,816 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 14:31:12,826 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 14:31:12,826 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 14:31:12,854 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 74, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 14:31:13,051 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_143112.html
+2026-10-03 14:31:13,051 [INFO] Attempt 2: no ads for 'Locksmith Cheltenham GL50' — trying next keyword (if available).
+2026-10-03 14:31:13,169 [INFO] --- CYCLE #1 Attempt 3/4 | Keyword: 'Locksmith Cheltenham GL52' ---
+2026-10-03 14:31:13,179 [INFO] Searching: 'Locksmith Cheltenham GL52'
+2026-10-03 14:31:30,236 [INFO] Search submitted.
+2026-10-03 14:31:33,742 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 14:31:33,751 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 14:31:33,759 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 14:31:33,769 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:33,776 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:33,786 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 14:31:33,794 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 14:31:33,804 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 14:31:33,811 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 14:31:33,821 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 14:31:33,829 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 14:31:33,838 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:33,839 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 14:31:33,852 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 14:31:33,863 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 14:31:33,864 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 14:31:33,894 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 97, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 14:31:34,167 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_143133.html
+2026-10-03 14:31:34,167 [INFO] Attempt 3: no ads for 'Locksmith Cheltenham GL52' — trying next keyword (if available).
+2026-10-03 14:31:34,276 [INFO] --- CYCLE #1 Attempt 4/4 | Keyword: 'Locksmith near Cheltenham' ---
+2026-10-03 14:31:34,291 [INFO] Searching: 'Locksmith near Cheltenham'
+2026-10-03 14:31:47,726 [INFO] Search submitted.
+2026-10-03 14:31:53,446 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 14:31:53,455 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 14:31:53,464 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 14:31:53,474 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:53,482 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:53,492 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 14:31:53,499 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 14:31:53,508 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 14:31:53,515 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 14:31:53,523 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 14:31:53,530 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 14:31:53,539 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 14:31:53,539 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 14:31:53,555 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 14:31:53,565 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 14:31:53,565 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 14:31:53,599 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 87, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 14:31:53,960 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_143153.html
+2026-10-03 14:31:53,960 [INFO] Attempt 4: no ads for 'Locksmith near Cheltenham' — trying next keyword (if available).
+2026-10-03 14:31:54,106 [INFO] Closing browser (end of cycle #1)...
+2026-10-03 14:31:57,038 [INFO] === CYCLE #1 END | attempts=4/4 | Total ads clicked this cycle: 0 ===
+2026-10-03 14:31:57,040 [INFO] === CYCLE #1 END | Clicked: 0 | Running total: 0 ===
+2026-10-03 14:35:44,467 [INFO] Bot started.
+2026-10-03 14:35:44,477 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 14:35:44,477 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 14:35:44,478 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 14:35:45,654 [INFO] === CYCLE #1 START | attempts up to 4, browser stays open all cycle ===
+2026-10-03 14:35:45,655 [INFO] === CYCLE #1 START | 9 keywords available, max attempts=4 ===
+2026-10-03 14:35:45,655 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 14:35:51,172 [INFO] Browser launched | UA: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, l...
+2026-10-03 14:35:51,182 [INFO] --- CYCLE #1 Attempt 1/4 | Keyword: '24 hour locksmith Cheltenham' ---
+2026-10-03 14:35:51,202 [INFO] Searching: '24 hour locksmith Cheltenham'
+2026-10-03 14:35:59,770 [ERROR] Attempt 1: search_google raised: 'NoneType' object has no attribute 'is_displayed'
+2026-10-03 14:35:59,770 [WARNING] Attempt 1: search failed — moving to next keyword.
+2026-10-03 14:35:59,782 [INFO] --- CYCLE #1 Attempt 2/4 | Keyword: 'Locksmith near Cheltenham' ---
+2026-10-03 14:35:59,800 [WARNING] Attempt 2: driver died (Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=154.0.8037.93)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd915f3+4de3]
+	chromedriver!(No symbol) [0xca58e4]
+	chromedriver!(No symbol) [0xadc270]
+	chromedriver!(No symbol) [0xabb233]
+	chromedriver!(No symbol) [0xb509db]
+	chromedriver!(No symbol) [0xb691c9]
+	chromedriver!(No symbol) [0xb49b16]
+	chromedriver!(No symbol) [0xb1c13a]
+	chromedriver!(No symbol) [0xb1ce14]
+	chromedriver!GetHandleVerifier [0x1229fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x124a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xeccb02+1402f2]
+	chromedriver!GetHandleVerifier [0xed4df3+1485e3]
+	chromedriver!(No symbol) [0xcb3cb8]
+	chromedriver!(No symbol) [0xcaed38]
+	chromedriver!(No symbol) [0xcaeee5]
+	chromedriver!(No symbol) [0xc9b227]
+	KERNEL32!BaseThreadInitThunk [0x75615d49+19]
+	ntdll!RtlInitializeExceptionChain [0x7706e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7706e181+231]
+). Re-launching...
+2026-10-03 14:35:59,801 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 14:36:38,476 [INFO] Bot started.
+2026-10-03 14:36:38,480 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 14:36:38,480 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 14:36:38,481 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 14:36:39,364 [INFO] === CYCLE #1 START | attempts up to 4, browser stays open all cycle ===
+2026-10-03 14:36:39,365 [INFO] === CYCLE #1 START | 9 keywords available, max attempts=4 ===
+2026-10-03 14:36:39,366 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 14:36:44,512 [INFO] Browser launched | UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_4_0 like Mac OS X) App...
+2026-10-03 14:36:44,522 [INFO] --- CYCLE #1 Attempt 1/4 | Keyword: 'Emergency locksmith Cheltenham' ---
+2026-10-03 14:36:44,533 [INFO] Searching: 'Emergency locksmith Cheltenham'
+2026-10-03 14:37:02,546 [INFO] Search submitted.
+2026-10-03 14:37:13,243 [WARNING] [detect_ads] No ads region markers (#tads/data-text-ad) appeared within 8s.
+2026-10-03 14:37:13,275 [DEBUG] [detect_ads] Ads-region IDs present: NONE
+2026-10-03 14:37:13,284 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 14:37:13,293 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 14:37:13,300 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 14:37:13,309 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 14:37:13,320 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 14:37:13,329 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 14:37:13,340 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 14:37:13,351 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 14:37:13,362 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 14:37:13,375 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 14:37:13,386 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 14:37:13,386 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 14:37:13,397 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 14:37:13,411 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 14:37:13,411 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 14:37:13,440 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 3, tads/bottomads present: [])
+2026-10-03 14:37:13,448 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_143713.html
+2026-10-03 14:37:13,449 [INFO] Attempt 1: no ads for 'Emergency locksmith Cheltenham' — trying next keyword (if available).
+2026-10-03 14:37:13,507 [INFO] --- CYCLE #1 Attempt 2/4 | Keyword: 'Locksmith near Cheltenham' ---
+2026-10-03 14:37:13,518 [INFO] Searching: 'Locksmith near Cheltenham'
+2026-10-03 14:37:21,920 [ERROR] Attempt 2: search_google raised: Message: invalid element state
+  (Session info: chrome=154.0.8037.93)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x4415f3+4de3]
+	chromedriver!(No symbol) [0x3558e4]
+	chromedriver!(No symbol) [0x18c0ae]
+	chromedriver!(No symbol) [0x1cf7e9]
+	chromedriver!(No symbol) [0x1f9d7c]
+	chromedriver!(No symbol) [0x1cd514]
+	chromedriver!(No symbol) [0x1f9f44]
+	chromedriver!(No symbol) [0x219783]
+	chromedriver!(No symbol) [0x1f9b16]
+	chromedriver!(No symbol) [0x1cc13a]
+	chromedriver!(No symbol) [0x1cce14]
+	chromedriver!GetHandleVerifier [0x8d9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x8fa71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x57cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x584df3+1485e3]
+	chromedriver!(No symbol) [0x363cb8]
+	chromedriver!(No symbol) [0x35ed38]
+	chromedriver!(No symbol) [0x35eee5]
+	chromedriver!(No symbol) [0x34b227]
+	KERNEL32!BaseThreadInitThunk [0x75615d49+19]
+	ntdll!RtlInitializeExceptionChain [0x7706e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7706e181+231]
+	(No symbol) [(nil)]
+
+2026-10-03 14:37:21,920 [WARNING] Attempt 2: search failed — moving to next keyword.
+2026-10-03 14:37:22,013 [INFO] --- CYCLE #1 Attempt 3/4 | Keyword: 'Local locksmith Cheltenham' ---
+2026-10-03 14:37:22,035 [INFO] Searching: 'Local locksmith Cheltenham'
+2026-10-03 14:37:25,624 [ERROR] Attempt 3: search_google raised: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=154.0.8037.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x4415f3+4de3]
+	chromedriver!(No symbol) [0x3558e4]
+	chromedriver!(No symbol) [0x18c270]
+	chromedriver!(No symbol) [0x17b4ae]
+	chromedriver!(No symbol) [0x199ce9]
+	chromedriver!(No symbol) [0x200bcc]
+	chromedriver!(No symbol) [0x2191c9]
+	chromedriver!(No symbol) [0x1f9b16]
+	chromedriver!(No symbol) [0x1cc13a]
+	chromedriver!(No symbol) [0x1cce14]
+	chromedriver!GetHandleVerifier [0x8d9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x8fa71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x57cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x584df3+1485e3]
+	chromedriver!(No symbol) [0x363cb8]
+	chromedriver!(No symbol) [0x35ed38]
+	chromedriver!(No symbol) [0x35eee5]
+	chromedriver!(No symbol) [0x34b227]
+	KERNEL32!BaseThreadInitThunk [0x75615d49+19]
+	ntdll!RtlInitializeExceptionChain [0x7706e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7706e181+231]
+	(No symbol) [(nil)]
+
+2026-10-03 14:37:25,624 [WARNING] Attempt 3: search failed — moving to next keyword.
+2026-10-03 14:37:25,901 [INFO] --- CYCLE #1 Attempt 4/4 | Keyword: 'Cheap locksmith Cheltenham' ---
+2026-10-03 14:37:25,903 [WARNING] Attempt 4: driver died (Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x4415f3+4de3]
+	chromedriver!(No symbol) [0x3558e4]
+	chromedriver!(No symbol) [0x18c0ae]
+	chromedriver!(No symbol) [0x1cb407]
+	chromedriver!(No symbol) [0x1f9c36]
+	chromedriver!(No symbol) [0x1f4f33]
+	chromedriver!(No symbol) [0x1f4900]
+	chromedriver!(No symbol) [0x15eec1]
+	chromedriver!(No symbol) [0x15f463]
+	chromedriver!(No symbol) [0x15f9ad]
+	chromedriver!GetHandleVerifier [0x8d9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x8fa71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x57cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x584df3+1485e3]
+	chromedriver!(No symbol) [0x363cb8]
+	chromedriver!(No symbol) [0x15e640]
+	chromedriver!(No symbol) [0x15dd32]
+	chromedriver!GetHandleVerifier [0x94faa1+513291]
+	KERNEL32!BaseThreadInitThunk [0x75615d49+19]
+	ntdll!RtlInitializeExceptionChain [0x7706e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7706e181+231]
+	(No symbol) [(nil)]
+). Re-launching...
+2026-10-03 14:37:25,904 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 16:00:07,926 [INFO] Bot started.
+2026-10-03 16:00:07,928 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:00:07,928 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:00:07,928 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:00:08,277 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:00:08,278 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:00:08,291 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:00:08,291 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:00:08,291 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:01:27,941 [INFO] Bot started.
+2026-10-03 16:01:27,945 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:01:27,946 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:01:27,946 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:01:28,287 [INFO] === CYCLE #1 START | attempts up to 4, browser stays open all cycle ===
+2026-10-03 16:01:28,290 [INFO] === CYCLE #1 START | 9 keywords available, max attempts=4 ===
+2026-10-03 16:01:28,290 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 16:01:36,205 [INFO] Browser launched | UA: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, l...
+2026-10-03 16:01:36,215 [INFO] --- CYCLE #1 Attempt 1/4 | Keyword: 'Locksmith Cheltenham GL51' ---
+2026-10-03 16:01:36,240 [INFO] Searching: 'Locksmith Cheltenham GL51'
+2026-10-03 16:01:53,487 [INFO] Search submitted.
+2026-10-03 16:02:08,205 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 16:02:08,215 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 16:02:08,225 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 16:02:08,234 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 16:02:08,244 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 16:02:08,253 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 16:02:08,263 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 16:02:08,272 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 16:02:08,284 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 16:02:08,295 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 16:02:08,303 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 16:02:08,457 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 16:02:08,457 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 16:02:08,472 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 16:02:08,485 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 16:02:08,485 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 16:02:08,521 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 64, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 16:02:08,846 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_160208.html
+2026-10-03 16:02:08,847 [INFO] Attempt 1: no ads for 'Locksmith Cheltenham GL51' — trying next keyword (if available).
+2026-10-03 16:02:09,073 [INFO] --- CYCLE #1 Attempt 2/4 | Keyword: 'car insurance quote' ---
+2026-10-03 16:02:09,088 [INFO] Searching: 'car insurance quote'
+2026-10-03 16:02:24,046 [INFO] Search submitted.
+2026-10-03 16:02:27,541 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap', '#bottomads']
+2026-10-03 16:02:27,553 [DEBUG] [detect_ads] CSS 'div[data-text-ad='1']' -> 0 matches
+2026-10-03 16:02:27,563 [DEBUG] [detect_ads] CSS 'div[data-text-ad='true']' -> 0 matches
+2026-10-03 16:02:27,573 [DEBUG] [detect_ads] CSS 'div[data-text-ad]' -> 0 matches
+2026-10-03 16:02:27,584 [DEBUG] [detect_ads] CSS '#tads div[data-text-ad]' -> 0 matches
+2026-10-03 16:02:27,594 [DEBUG] [detect_ads] CSS '#tads .v5yQqb' -> 0 matches
+2026-10-03 16:02:27,604 [DEBUG] [detect_ads] CSS '#tads .IuoSj.SbEZf.ekNIOe' -> 0 matches
+2026-10-03 16:02:27,614 [DEBUG] [detect_ads] CSS '#tads .IuoSj' -> 0 matches
+2026-10-03 16:02:27,624 [DEBUG] [detect_ads] CSS '#tads[aria-label='Ads'] > div > div' -> 0 matches
+2026-10-03 16:02:27,633 [DEBUG] [detect_ads] CSS '#tvcap .v5yQqb' -> 0 matches
+2026-10-03 16:02:27,641 [DEBUG] [detect_ads] CSS '#bottomads .v5yQqb' -> 0 matches
+2026-10-03 16:02:27,651 [DEBUG] [detect_ads] CSS '#bottomads div[data-text-ad]' -> 0 matches
+2026-10-03 16:02:27,651 [INFO] [detect_ads] CSS selectors empty — trying XPath fallbacks...
+2026-10-03 16:02:27,663 [DEBUG] [detect_ads] XPath '//div[@id='tads']//div[starts-with(@data-text-ad, '1') or starts-with(@data-text' -> 0 matches
+2026-10-03 16:02:27,674 [DEBUG] [detect_ads] XPath '//div[@id='tads' or @id='tvcap' or @id='bottomads']//a[@data-rw]/ancestor::div[c' -> 0 matches
+2026-10-03 16:02:27,674 [INFO] [detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...
+2026-10-03 16:02:27,720 [WARNING] No sponsored ad links detected. (div[data-text-ad] on page: 0, total <a>: 97, tads/bottomads present: ['#tads', '#tvcap', '#bottomads'])
+2026-10-03 16:02:27,947 [WARNING] [DEBUG] Saved page HTML for inspection -> debug_no_ads_detected_20261003_160227.html
+2026-10-03 16:02:27,947 [INFO] Attempt 2: no ads for 'car insurance quote' — trying next keyword (if available).
+2026-10-03 16:02:28,107 [INFO] --- CYCLE #1 Attempt 3/4 | Keyword: 'Locksmith near Cheltenham' ---
+2026-10-03 16:02:28,127 [INFO] Searching: 'Locksmith near Cheltenham'
+2026-10-03 16:02:43,331 [INFO] Search submitted.
+2026-10-03 16:02:48,893 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap']
+2026-10-03 16:02:48,911 [INFO] [detect_ads] CSS 'div[data-text-ad='1']' -> 1 container(s)
+2026-10-03 16:02:49,244 [INFO]   container#0 -> link: <a class='sVXRqc' url='https://www.google.com/aclk?sa=L&ai=DChsSEwiz2eH-y52XAxXImWYCHYxdM4YYACICCAIQABo'> url='https://www.google.com/aclk?sa=L&ai=DChsSEwiz2eH-y52XAxXImWYCHYxdM4YYACICCAIQABoCc20&ae=2&aspm=1&co='
+2026-10-03 16:02:49,245 [INFO] Total sponsored ad links found: 1
+2026-10-03 16:02:49,254 [INFO]   → Clicking ad: https://www.google.com/aclk?sa=L&ai=DChsSEwiz2eH-y52XAxXImWYCHYxdM4YYACICCAIQABo...
+2026-10-03 16:02:53,114 [INFO]      Navigated in same tab. Waiting 14.6s...
+2026-10-03 16:03:11,368 [INFO]   ✓ Ad click complete.
+2026-10-03 16:03:11,369 [INFO] Attempt 3 END | found=1, clicked=1
+2026-10-03 16:03:11,369 [INFO] Closing browser (end of cycle #1)...
+2026-10-03 16:03:14,199 [INFO] === CYCLE #1 END | attempts=3/4 | Total ads clicked this cycle: 1 ===
+2026-10-03 16:03:14,202 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:03:45,214 [INFO] Bot stopped. Total cycles: 1 | Total clicks: 1
+2026-10-03 16:03:57,796 [INFO] Bot started.
+2026-10-03 16:03:57,801 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:03:57,801 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:03:57,801 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:03:58,102 [INFO] === CYCLE #1 START | attempts up to 4, browser stays open all cycle ===
+2026-10-03 16:03:58,104 [INFO] === CYCLE #1 START | 9 keywords available, max attempts=4 ===
+2026-10-03 16:03:58,104 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 16:04:02,730 [INFO] Browser launched | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+2026-10-03 16:04:02,743 [INFO] --- CYCLE #1 Attempt 1/4 | Keyword: 'Local locksmith Cheltenham' ---
+2026-10-03 16:04:02,763 [INFO] Searching: 'Local locksmith Cheltenham'
+2026-10-03 16:04:19,454 [INFO] Search submitted.
+2026-10-03 16:04:25,074 [DEBUG] [detect_ads] Ads-region IDs present: ['#tads', '#tvcap']
+2026-10-03 16:04:25,083 [INFO] [detect_ads] CSS 'div[data-text-ad='1']' -> 2 container(s)
+2026-10-03 16:04:25,140 [INFO]   container#0 -> link: <a class='sVXRqc' url='https://www.google.com/aclk?sa=L&ai=DChsSEwjAw86rzJ2XAxWuXw8CHV5EM8YYACICCAEQABo'> url='https://www.google.com/aclk?sa=L&ai=DChsSEwjAw86rzJ2XAxWuXw8CHV5EM8YYACICCAEQABoCdGI&ae=2&aspm=1&co='
+2026-10-03 16:04:25,193 [INFO]   container#1 -> link: <a class='sVXRqc' url='https://www.google.com/aclk?sa=L&ai=DChsSEwjAw86rzJ2XAxWuXw8CHV5EM8YYACICCAIQABo'> url='https://www.google.com/aclk?sa=L&ai=DChsSEwjAw86rzJ2XAxWuXw8CHV5EM8YYACICCAIQABoCdGI&ae=2&aspm=1&co='
+2026-10-03 16:04:25,193 [INFO] Total sponsored ad links found: 2
+2026-10-03 16:04:25,197 [INFO]   → Clicking ad: https://www.google.com/aclk?sa=L&ai=DChsSEwjAw86rzJ2XAxWuXw8CHV5EM8YYACICCAEQABo...
+2026-10-03 16:04:34,200 [INFO]      Navigated in same tab. Waiting 6.6s...
+2026-10-03 16:04:44,775 [INFO]   ✓ Ad click complete.
+2026-10-03 16:04:49,868 [INFO]   → Clicking ad: https://www.google.com/aclk?sa=L&ai=DChsSEwjAw86rzJ2XAxWuXw8CHV5EM8YYACICCAIQABo...
+2026-10-03 16:04:50,636 [ERROR]   ✗ Failed to click ad: Message: stale element reference: stale element not found
+  (Session info: chrome=154.0.8037.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7b15f3+4de3]
+	chromedriver!(No symbol) [0x6c58e4]
+	chromedriver!(No symbol) [0x4fc270]
+	chromedriver!(No symbol) [0x50eadd]
+	chromedriver!(No symbol) [0x50d8e7]
+	chromedriver!(No symbol) [0x503859]
+	chromedriver!(No symbol) [0x501ce2]
+	chromedriver!(No symbol) [0x5050fa]
+	chromedriver!(No symbol) [0x505188]
+	chromedriver!(No symbol) [0x54c9af]
+	chromedriver!(No symbol) [0x54c2a5]
+	chromedriver!(No symbol) [0x5921c8]
+	chromedriver!(No symbol) [0x569d7c]
+	chromedriver!(No symbol) [0x589783]
+	chromedriver!(No symbol) [0x569b16]
+	chromedriver!(No symbol) [0x53c13a]
+	chromedriver!(No symbol) [0x53ce14]
+	chromedriver!GetHandleVerifier [0xc49fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xc6a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x8ecb02+1402f2]
+	chromedriver!GetHandleVerifier [0x8f4df3+1485e3]
+	chromedriver!(No symbol) [0x6d3cb8]
+	chromedriver!(No symbol) [0x6ced38]
+	chromedriver!(No symbol) [0x6ceee5]
+	chromedriver!(No symbol) [0x6bb227]
+	KERNEL32!BaseThreadInitThunk [0x75615d49+19]
+	ntdll!RtlInitializeExceptionChain [0x7706e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7706e181+231]
+
+2026-10-03 16:04:50,643 [INFO] Attempt 1 END | found=2, clicked=1
+2026-10-03 16:04:50,644 [INFO] Closing browser (end of cycle #1)...
+2026-10-03 16:04:53,311 [INFO] === CYCLE #1 END | attempts=1/4 | Total ads clicked this cycle: 1 ===
+2026-10-03 16:04:53,313 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:09:55,702 [INFO] Bot started.
+2026-10-03 16:09:55,703 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:09:55,704 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:09:55,704 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:09:56,024 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:09:56,026 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:09:56,029 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:09:56,029 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:09:56,029 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:10:14,055 [INFO] Bot started.
+2026-10-03 16:10:14,056 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:10:14,056 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:10:14,056 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:10:14,365 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:10:14,366 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:10:14,368 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:10:14,368 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:10:14,368 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:10:50,720 [INFO] Bot started.
+2026-10-03 16:10:50,721 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:10:50,721 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:10:50,721 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:10:51,021 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:10:51,022 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:10:51,024 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:10:51,024 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:10:51,024 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:13:09,593 [INFO] Bot started.
+2026-10-03 16:13:09,595 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:13:09,595 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:13:09,595 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:13:09,917 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:13:09,918 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:13:09,920 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:13:09,920 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:13:09,920 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:15:02,085 [INFO] Bot started.
+2026-10-03 16:15:02,088 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:15:02,089 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:15:02,089 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:15:02,453 [INFO] === CYCLE #1 START | attempts up to 4, browser stays open all cycle ===
+2026-10-03 16:15:02,455 [INFO] === CYCLE #1 START | 9 keywords available, max attempts=4 ===
+2026-10-03 16:15:02,455 [INFO] [NO-PROXY MODE] Running without proxy — using your real IP.
+2026-10-03 16:15:07,455 [INFO] Browser launched | UA: Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.0...
+2026-10-03 16:15:07,466 [INFO] --- CYCLE #1 Attempt 1/4 | Keyword: 'Locksmith Cheltenham GL51' ---
+2026-10-03 16:15:07,486 [INFO] Searching: 'Locksmith Cheltenham GL51'
+2026-10-03 16:15:21,359 [INFO] Search submitted.
+2026-10-03 16:15:35,545 [INFO] [detect_ads] CSS 'div[data-text-ad='1']' -> 2 container(s)
+2026-10-03 16:15:35,671 [INFO]   container#0 -> link: <a class='tNxQIb xEoONc nEWj3b gpHVGb pj92yd Cxb6W' url='https://www.google.com/aclk?sa=L&ai=DChsSEwjYyYruzp2XAxV52EwCHTPWAEwYACICCAEQARo'> url='https://www.google.com/aclk?sa=L&ai=DChsSEwjYyYruzp2XAxV52EwCHTPWAEwYACICCAEQARoCdG0&co=1&gclid=EAIa'
+2026-10-03 16:15:35,796 [INFO]   container#1 -> link: <a class='cz3goc OcpZAb' url='https://www.google.com/aclk?sa=L&ai=DChsSEwjYyYruzp2XAxV52EwCHTPWAEwYACICCAIQABo'> url='https://www.google.com/aclk?sa=L&ai=DChsSEwjYyYruzp2XAxV52EwCHTPWAEwYACICCAIQABoCdG0&co=1&gclid=EAIa'
+2026-10-03 16:15:35,796 [INFO] Total sponsored ad links found: 2
+2026-10-03 16:15:35,800 [INFO]   → Clicking ad: https://www.google.com/aclk?sa=L&ai=DChsSEwjYyYruzp2XAxV52EwCHTPWAEwYACICCAEQARo...
+2026-10-03 16:15:44,349 [INFO]      Navigated in same tab. Waiting 8.5s...
+2026-10-03 16:15:55,322 [INFO]   ✓ Ad click complete.
+2026-10-03 16:15:58,239 [INFO]   → Clicking ad: https://www.google.com/aclk?sa=L&ai=DChsSEwjYyYruzp2XAxV52EwCHTPWAEwYACICCAIQABo...
+2026-10-03 16:16:04,599 [INFO]      Navigated in same tab. Waiting 7.2s...
+2026-10-03 16:16:14,606 [INFO]   ✓ Ad click complete.
+2026-10-03 16:16:14,606 [INFO] Attempt 1 END | found=2, clicked=2
+2026-10-03 16:16:14,606 [INFO] Closing browser (end of cycle #1)...
+2026-10-03 16:16:17,169 [INFO] === CYCLE #1 END | attempts=1/4 | Total ads clicked this cycle: 2 ===
+2026-10-03 16:16:17,185 [INFO] === CYCLE #1 END | Clicked: 2 | Running total: 2 ===
