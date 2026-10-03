@@ -172,7 +172,12 @@ def create_driver(config, logger, use_proxy=True):
         "prefs", {
             "intl.accept_languages": "en-GB,en",
             "profile.default_content_setting_values.geolocation": 2,
+            "profile.managed_default_content_settings.images": 1,
         }
+    )
+    options.add_experimental_option(
+        "excludeSwitches",
+        ["enable-automation", "enable-logging"],
     )
 
     # ── Window size ────────────────────────────────────────────────────────
@@ -224,6 +229,20 @@ def human_pause_jitter(base=1.0, spread=0.8):
     time.sleep(random.uniform(base - spread, base + spread))
 
 
+def human_idle_look(driver):
+    """Mimic a user reading/searching by drifting the mouse and scrolling a bit."""
+    try:
+        body = driver.find_element(By.TAG_NAME, "body")
+        offset_x = random.randint(-80, 80)
+        offset_y = random.randint(-55, 55)
+        ActionChains(driver).move_to_element_with_offset(body, offset_x, offset_y).perform()
+        human_pause_jitter(0.3, 0.7)
+        driver.execute_script(f"window.scrollBy(0, {random.randint(30, 180)});")
+        human_pause_jitter(0.3, 0.8)
+    except Exception:
+        pass
+
+
 def human_type(element, text, min_delay=0.05, max_delay=0.18):
     """Type text character by character with random delays."""
     for char in text:
@@ -239,16 +258,30 @@ def human_scroll(driver, pixels_min=100, pixels_max=400):
 
 
 def human_move_and_click(driver, element):
-    """Move mouse to element with offset then click."""
+    """Move the mouse in a more natural path before clicking to mimic real browsing."""
+    try:
+        element.rect
+    except Exception:
+        pass
+
     actions = ActionChains(driver)
+    actions.move_by_offset(random.randint(20, 120), random.randint(20, 80))
+    actions.pause(random.uniform(0.15, 0.4))
     actions.move_to_element_with_offset(
         element,
-        random.randint(-5, 5),
-        random.randint(-3, 3)
+        random.randint(-8, 8),
+        random.randint(-6, 6),
     )
-    actions.pause(random.uniform(0.1, 0.4))
+    actions.pause(random.uniform(0.10, 0.35))
+    actions.move_by_offset(random.randint(-8, 8), random.randint(-6, 6))
+    actions.pause(random.uniform(0.08, 0.25))
     actions.click()
     actions.perform()
+
+    try:
+        driver.execute_script("document.body.style.cursor = 'auto';")
+    except Exception:
+        pass
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -320,6 +353,8 @@ def search_google(driver, keyword, logger):
         try:
             driver.get("https://www.google.co.uk")
             human_delay(1.5, 3.0)
+            if random.random() < 0.7:
+                human_idle_look(driver)
             accept_google_consent(driver, logger)
 
             search_box = WebDriverWait(driver, 10).until(
@@ -327,7 +362,9 @@ def search_google(driver, keyword, logger):
             )
             search_box.clear()
             human_type(search_box, keyword)
-            human_pause_jitter(0.4, 0.5)
+            human_pause_jitter(0.4, 0.7)
+            if random.random() < 0.35:
+                human_scroll(driver, pixels_min=40, pixels_max=180)
             search_box.send_keys(Keys.RETURN)
             logger.info("Search submitted.")
             human_delay(2.0, 4.0)
@@ -464,7 +501,7 @@ def detect_ads(driver, logger):
             continue
         if not containers:
             continue
-        logger.info(f"[detect_ads] CSS '{selector}' -> {len(containers)} container(s)")
+        logger.debug(f"[detect_ads] CSS '{selector}' -> {len(containers)} container(s)")
         for i, container in enumerate(containers):
             try:
                 cid = container.id
@@ -475,14 +512,14 @@ def detect_ads(driver, logger):
             seen_containers.add(cid)
             link, url = _find_link_in_container(container, seen_ids)
             if link is not None:
-                logger.info(f"  container#{i} -> link: {_describe(link)} url='{url[:100]}'")
+                logger.debug(f"  container#{i} -> link: {_describe(link)} url='{url[:100]}'")
                 ad_links.append((link, url))
         if ad_links:
             break
 
     # ── Step 2b: XPath fallbacks (only if CSS yielded nothing) ─────────────
     if not ad_links:
-        logger.info("[detect_ads] CSS selectors empty — trying XPath fallbacks...")
+        logger.debug("[detect_ads] CSS selectors empty — trying XPath fallbacks...")
         for xpath in AD_XPATHS:
             try:
                 containers = driver.find_elements(By.XPATH, xpath)
@@ -490,7 +527,7 @@ def detect_ads(driver, logger):
                 continue
             if not containers:
                 continue
-            logger.info(f"[detect_ads] XPath found {len(containers)} container(s)")
+            logger.debug(f"[detect_ads] XPath found {len(containers)} container(s)")
             for i, container in enumerate(containers):
                 try:
                     cid = container.id
@@ -501,14 +538,14 @@ def detect_ads(driver, logger):
                 seen_containers.add(cid)
                 link, url = _find_link_in_container(container, seen_ids)
                 if link is not None:
-                    logger.info(f"  xpath-container#{i} -> {_describe(link)} url='{url[:100]}'")
+                    logger.debug(f"  xpath-container#{i} -> {_describe(link)} url='{url[:100]}'")
                     ad_links.append((link, url))
             if ad_links:
                 break
 
     # ── Step 2c: Last-ditch fallback: grab ANY <a data-rw> on the page ─────
     if not ad_links:
-        logger.info("[detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...")
+        logger.debug("[detect_ads] Trying last-ditch: ALL anchors with data-rw on the page...")
         try:
             all_rw = driver.find_elements(By.CSS_SELECTOR, "a[data-rw]")
         except Exception:
@@ -526,7 +563,7 @@ def detect_ads(driver, logger):
             seen_ids.add(eid)
             ad_links.append((link, _sanitize_url(rw)))
         if ad_links:
-            logger.info(f"[detect_ads] Last-ditch found {len(ad_links)} ad link(s) via a[data-rw]")
+            logger.debug(f"[detect_ads] Last-ditch found {len(ad_links)} ad link(s) via a[data-rw]")
 
     # ── Step 3: Result reporting / debug dump ──────────────────────────────
     if not ad_links:
@@ -617,7 +654,9 @@ def click_ad(driver, link_element, href, config, logger):
         except Exception:
             pass
 
-        human_scroll(driver)
+        human_pause_jitter(0.3, 0.5)
+        human_scroll(driver, pixels_min=80, pixels_max=220)
+        human_pause_jitter(0.5, 0.7)
         human_move_and_click(driver, link_element)
 
         # Wait for new tab or page load
@@ -640,7 +679,9 @@ def click_ad(driver, link_element, href, config, logger):
             logger.info(f"     Navigated in same tab. Waiting {wait_time:.1f}s...")
             time.sleep(wait_time)
             driver.back()
-            time.sleep(2)
+            human_pause_jitter(1.0, 1.2)
+            human_scroll(driver, pixels_min=60, pixels_max=180)
+            time.sleep(1.5)
 
         logger.info("  ✓ Ad click complete.")
         return True
@@ -861,9 +902,9 @@ def run_cycle(config, logger, cycle_number, use_proxy=True):
                     if not search_ok:
                         logger.warning(f"Attempt {attempt_idx}: search failed — moving to next keyword.")
                         print(f"{Fore.YELLOW}  [!] Search failed for '{keyword}'. Trying next keyword…{Style.RESET_ALL}")
-                        # Ensure back on Google homepage for the next retry
                         try:
                             driver.get("about:blank")
+                            human_pause_jitter(1.2, 0.8)
                         except Exception:
                             pass
                         continue
@@ -902,6 +943,9 @@ def run_cycle(config, logger, cycle_number, use_proxy=True):
                             ads_clicks += 1
                         if i < ads_found:
                             human_delay(delay_min, delay_max)
+                        else:
+                            # final ad click should feel like a user returning to the SERP
+                            human_pause_jitter(1.0, 1.3)
 
                     total_ads_clicked_this_cycle += ads_clicks
                     logger.info(

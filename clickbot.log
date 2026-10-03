@@ -518,3 +518,39 @@ Stacktrace:
 2026-10-03 16:16:14,606 [INFO] Closing browser (end of cycle #1)...
 2026-10-03 16:16:17,169 [INFO] === CYCLE #1 END | attempts=1/4 | Total ads clicked this cycle: 2 ===
 2026-10-03 16:16:17,185 [INFO] === CYCLE #1 END | Clicked: 2 | Running total: 2 ===
+2026-10-03 16:17:54,292 [INFO] Bot started.
+2026-10-03 16:17:54,296 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:17:54,296 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:17:54,297 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:17:54,725 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:17:54,727 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:17:54,730 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:17:54,730 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:17:54,730 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:18:58,797 [INFO] Bot started.
+2026-10-03 16:18:58,798 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:18:58,798 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:18:58,798 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:18:59,085 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:18:59,087 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:18:59,090 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:18:59,090 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:18:59,090 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:20:07,349 [INFO] Bot started.
+2026-10-03 16:20:07,350 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:20:07,350 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:20:07,351 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:20:07,659 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:20:07,661 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:20:07,665 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:20:07,665 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:20:07,665 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2
+2026-10-03 16:21:03,267 [INFO] Bot started.
+2026-10-03 16:21:03,269 [INFO] Copyable paths  ->  Log: G:\Personal\fver\Google-Ad-Clickbot-\clickbot.log
+2026-10-03 16:21:03,269 [INFO] Copyable paths  ->  Summary: G:\Personal\fver\Google-Ad-Clickbot-\session_summary.txt
+2026-10-03 16:21:03,269 [INFO] Copyable paths  ->  Last run: G:\Personal\fver\Google-Ad-Clickbot-\last_run_info.txt
+2026-10-03 16:21:03,560 [INFO] === CYCLE #1 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:21:03,561 [INFO] === CYCLE #1 END | Clicked: 1 | Running total: 1 ===
+2026-10-03 16:21:03,567 [INFO] === CYCLE #2 START | attempts up to 1, browser stays open all cycle ===
+2026-10-03 16:21:03,567 [INFO] === CYCLE #2 END | Clicked: 1 | Running total: 2 ===
+2026-10-03 16:21:03,567 [INFO] Bot stopped. Total cycles: 2 | Total clicks: 2

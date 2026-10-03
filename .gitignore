@@ -1,0 +1,39 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Local environment / secrets
+.env
+.env.*
+
+# Logs and runtime artifacts
+*.log
+session_summary.txt
+last_run_info.txt
+debug_*.html
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Selenium / browser runtime
+chromedriver*
+
+# Test / coverage output
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build / packaging artifacts
+build/
+dist/
+*.egg-info/
