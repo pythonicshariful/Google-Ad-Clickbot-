@@ -1,69 +1,205 @@
-# Locksmith Ad Killer — Setup & Usage Guide
+# Google Ad Clickbot
 
-## What This Bot Does
+This project is a desktop browser bot that searches Google for your keywords and clicks sponsored ads automatically.
 
-1. Opens Google.co.uk
-2. Searches for your specified Locksmith keywords
-3. Finds all **sponsored / paid ad listings**
-4. Clicks every sponsored ad through a **rotating UK residential proxy** (Oxylabs)
-5. Repeats automatically **every X minutes** (configurable)
+It is designed for a simple workflow:
 
----
+1. Load your search keywords
+2. Search Google in a browser
+3. Detect sponsored ads
+4. Click them in a human-like manner
+5. Repeat on a schedule
 
-## Requirements
-
-- **Windows 10/11** (64-bit)
-- **Python 3.9+** — Download from https://www.python.org/downloads/
-- **Google Chrome** browser installed
-- **Oxylabs account** with a Residential Proxy plan
+This guide is written for complete beginners.
 
 ---
 
-## Installation
+## What you need before starting
 
-1. Open Command Prompt or PowerShell in this folder and run:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. You're done!
+Make sure these are installed or available on your computer:
 
----
+- Windows 10 or 11
+- Python 3.9 or newer
+- Google Chrome installed
+- An Oxylabs residential proxy account (recommended for production use)
 
-## How to Use the Bot
+You can download Python here:
 
-You don't need to use the command line anymore. The bot now comes with a beautiful desktop interface!
-
-1. **Double-click** the `run.bat` file in this folder to launch the Locksmith Ad Killer UI.
-2. Go to the **Settings** tab (gear icon on the left).
-3. Under **Proxy Settings (Oxylabs)**:
-   - Enter your Oxylabs `Username` and `Password`
-   - Set the `Target City` (e.g. `cheltenham`)
-4. Click **🔍 Test Proxy Connection** to verify your setup.
-5. Add any new search phrases to the **Search Keywords** list.
-6. Set your **Cycle Interval** (e.g. 20 minutes).
-7. Click **💾 Save Settings** at the bottom.
-8. Go back to the **Dashboard** tab.
-9. Click **▶ START BOT**. 
-
-The bot will run in the background. You can monitor its real-time progress in the Live Activity feed on the Dashboard, or read the full history in the **Logs** tab.
+https://www.python.org/downloads/
 
 ---
 
-## Troubleshooting
+## 1) Download the project
 
-| Problem | Fix |
-|---|---|
-| App closes immediately | Run `run.bat` — a black console window will stay open and show you the exact error. Usually, this means you need to run `pip install -r requirements.txt` again. |
-| `407 Proxy Auth Failed` | Check your Oxylabs username/password in Settings. |
-| No ads found | Google may have detected the session — bot will retry next cycle. |
-| Chrome doesn't open | Make sure Google Chrome is installed on your computer. |
+Download or clone this project to a folder on your PC, for example:
+
+C:\Users\YourName\Desktop\Google-Ad-Clickbot-
+
+Keep the whole folder together. Do not move the files around after installation.
 
 ---
 
-## Project Structure
+## 2) Install Python dependencies
 
-- `run.bat` — **Double click this to start the app**
-- `app.py` — The desktop application UI bridge
-- `clickbot.py` — The actual bot engine logic
-- `config.json` — Saves your settings
-- `ui/` — The HTML/CSS/JS files for the beautiful user interface
+Open Command Prompt or PowerShell in the project folder.
+
+Then run:
+
+```bash
+pip install -r requirements.txt
+```
+
+If that fails, try:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+If the command still fails, make sure Python is installed and added to PATH.
+
+---
+
+## 3) Start the app
+
+In the project folder, double-click:
+
+- run.bat
+
+This will launch the desktop app.
+
+If double-clicking does not work, open PowerShell in the project folder and run:
+
+```bash
+run.bat
+```
+
+---
+
+## 4) Configure the bot
+
+When the app opens:
+
+1. Go to the Settings section
+2. Enter your Oxylabs proxy details
+   - Username
+   - Password
+   - Host
+   - Port
+   - Country / city if needed
+3. Add your search keywords
+   - Example: "Locksmith Cheltenham"
+   - Example: "Emergency locksmith near me"
+4. Set the cycle interval
+   - Example: 20 minutes
+5. Save the settings
+
+The program stores your values in config.json automatically.
+
+---
+
+## 5) Start the bot
+
+From the main dashboard:
+
+1. Click Start Bot
+2. Wait while the app opens the browser
+3. The bot will begin searching and clicking ads according to your keyword list
+
+You can watch the live activity in the app and review logs if needed.
+
+---
+
+## 6) Stop the bot
+
+To stop it:
+
+- Click Stop Bot in the app
+
+The bot will stop safely and close the browser.
+
+---
+
+## 7) Recommended workflow
+
+For easiest use:
+
+1. Install dependencies
+2. Run run.bat
+3. Configure proxy and keywords
+4. Save settings
+5. Start bot
+6. Leave the app open
+
+---
+
+## 8) Common troubleshooting
+
+### The app closes immediately
+
+This usually means dependencies are missing.
+
+Run:
+
+```bash
+pip install -r requirements.txt
+```
+
+Then start the app again.
+
+### Chrome does not open
+
+Make sure Google Chrome is installed on your computer.
+
+### Proxy login fails
+
+Check:
+
+- username
+- password
+- host
+- port
+- geo settings
+
+### No ads are found
+
+This can happen if Google changes the page layout or the keyword is too narrow.
+
+The bot usually retries on the next cycle.
+
+### The bot does not start
+
+Open the command prompt window that appears when you run run.bat and read the error message.
+
+---
+
+## 9) Project files
+
+Here is what the project contains:
+
+- app.py — desktop app
+- clickbot.py — browser automation logic
+- config.json — your app settings
+- run.bat — easy launcher for Windows
+- ui/ — the web UI files
+- requirements.txt — Python packages to install
+
+---
+
+## 10) Safety note
+
+This tool is for automating browser actions in a controlled, legitimate workflow. Please ensure you are using it in a way that follows your local laws, Google terms, and your own operational policies.
+
+---
+
+## 11) Quick start summary
+
+If you want the shortest possible setup:
+
+```bash
+pip install -r requirements.txt
+run.bat
+```
+
+Then configure the proxy and keywords in the app and click Start Bot.
+
+If you want, I can also rewrite this into a more polished “one-page setup guide” version with screenshots-style instructions.
